@@ -34,23 +34,23 @@ Users should be able to:
  
 3. Manage Bookings: After logging in as a customer, users should be able to: View their current and past bookings, Cancel a booking (only if the rental has not started yet).
 
-4. User Authentication: <br>
-· Implement a basic authentication system for users.
-· Allow users to sign up, log in, and log out.
-· Use middleware to protect routes (e.g., only logged-in users can book cars or view their booking history).
+4. User Authentication: 
+ - · Implement a basic authentication system for users.
+ - · Allow users to sign up, log in, and log out.
+ - · Use middleware to protect routes (e.g., only logged-in users can book cars or view their booking history).
 
  
 
 #### Part 3: Database Design
 Database Design: Design the database schema for the car rental system, including tables for:
-1. users Table (admin, customers):
-id (BIGINT)
-name (STRING)
-email (STRING)
-password (STRING)
-role (STRING) [admin/customer]
-created_at (TIMESTAMP)
-updated_at (TIMESTAMP)
+1. users Table (admin, customers): <br>
+id (BIGINT) <br>
+name (STRING) <br>
+email (STRING) <br>
+password (STRING) <br>
+role (STRING) [admin/customer] <br>
+created_at (TIMESTAMP) <br>
+updated_at (TIMESTAMP) <br>
 
 
 2. Cars Table:
