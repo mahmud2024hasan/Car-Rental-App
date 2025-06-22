@@ -139,8 +139,9 @@ class CustomerController extends Controller
 
     // Store a new booking in the database
     public function store(Request $request)
-    {
-        $this->authorize('create', Rental::class); // Only authenticated users can create rentals
+    {   
+        // Only authenticated users can create bookings
+        $this->authorize('create', Rental::class); 
 
         // Validate and store the rental data
         $request->validate([
@@ -171,7 +172,7 @@ class CustomerController extends Controller
 
         // Send confirmation email
         Mail::to($rental->user->email)->queue(new RentalConfirmationMail($rental));
-        Mail::to('mahmud99abedin@gmail.com')->queue(new RentalConfirmToAdminMail($rental));
+        Mail::to(env('MAIL_FROM_ADDRESS'))->queue(new RentalConfirmToAdminMail($rental));
 
         return redirect()->route('customer.bookings')->with('success', 'Congratulations! Your booking is created successfully. Please check your email to receive the confirmation, and wait for the approval.');
     }

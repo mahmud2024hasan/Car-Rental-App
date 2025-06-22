@@ -147,11 +147,11 @@ class RentalController extends Controller
 
         // Send confirmation email
         Mail::to($rental->user->email)->queue(new RentalConfirmationMail($rental));
-        Mail::to('mahmud99abedin@gmail.com')->queue(new RentalConfirmToAdminMail($rental));
+        Mail::to(env('MAIL_FROM_ADDRESS'))->queue(new RentalConfirmToAdminMail($rental));
 
 
         // Redirect to the rentals index page
-        return redirect()->route('admin.rentals.index')->with('success', 'New rental created successfully.');
+        return redirect()->route('admin.rentals.index')->with('success', 'New rental created successfully and confirmation email sent to customer and admin.');
     }
 
     // Show the rental details
