@@ -175,6 +175,10 @@ class RentalController extends Controller
             'name' => $rental->user->name,
             'email' => $rental->user->email,
             'mobile' => optional($rental->user->customerProfile)->mobile,
+            'address' => optional($rental->user->customerProfile)->address,
+            'district' => optional($rental->user->customerProfile)->district,
+            'division' => optional($rental->user->customerProfile)->division,
+            'postal_code' => optional($rental->user->customerProfile)->postal_code,
         ];
 
         // Return the rental show view with the rental data

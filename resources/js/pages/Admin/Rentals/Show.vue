@@ -55,8 +55,9 @@ rental.total_days = totalDaysCount;
                         <p class="text-lg"><span class="font-semibold">Email:</span> {{ rental.customer_details.email }}</p>
                         <p class="text-lg"><span class="font-semibold">Mobile:</span> {{ rental.customer_details.mobile }}</p>
                         <p class="text-lg"><span class="font-semibold">Address:</span> {{ rental.customer_details.address }}</p>
-                        <p class="text-lg"><span class="font-semibold">City:</span> {{ rental.customer_details.city }}</p>
-                        <p class="text-lg"><span class="font-semibold">Country:</span> {{ rental.customer_details.country }}</p>
+                        <p class="text-lg"><span class="font-semibold">District:</span> {{ rental.customer_details.district }}</p>
+                        <p class="text-lg"><span class="font-semibold">Division:</span> {{ rental.customer_details.division }}</p>
+                        <p class="text-lg"><span class="font-semibold">Postal Code:</span> {{ rental.customer_details.postal_code }}</p>
                     </div>
                 </div>
 
