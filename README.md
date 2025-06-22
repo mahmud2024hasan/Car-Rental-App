@@ -35,9 +35,9 @@ Users should be able to:
 3. Manage Bookings: After logging in as a customer, users should be able to: View their current and past bookings, Cancel a booking (only if the rental has not started yet).
 
 4. User Authentication: 
- - · Implement a basic authentication system for users.
- - · Allow users to sign up, log in, and log out.
- - · Use middleware to protect routes (e.g., only logged-in users can book cars or view their booking history).
+ - Implement a basic authentication system for users.
+ - Allow users to sign up, log in, and log out.
+ - Use middleware to protect routes (e.g., only logged-in users can book cars or view their booking history).
 
  
 
@@ -54,55 +54,55 @@ updated_at (TIMESTAMP) <br>
 
 
 2. Cars Table:
-id (BIGINT)
-name (STRING)
-brand (STRING)
-model (STRING)
-year (INTEGER)
-car_type (STRING)
-daily_rent_price (DECIMAL)
-availability (BOOLEAN)
-image (STRING)
-created_at (TIMESTAMP)
-updated_at (TIMESTAMP)
+id (BIGINT) <br>
+name (STRING) <br>
+brand (STRING) <br>
+model (STRING) <br>
+year (INTEGER) <br>
+car_type (STRING) <br>
+daily_rent_price (DECIMAL) <br>
+availability (BOOLEAN) <br>
+image (STRING) <br>
+created_at (TIMESTAMP) <br>
+updated_at (TIMESTAMP) <br>
 
 
 3. Rentals Table:
-id (BIGINT)
-user_id (BIGINT)
-car_id (BIGINT)
-start_date (DATE)
-end_date (DATE)
-total_cost (DECIMAL)
-created_at (TIMESTAMP)
-updated_at (TIMESTAMP)
+id (BIGINT) <br>
+user_id (BIGINT) <br>
+car_id (BIGINT) <br>
+start_date (DATE) <br>
+end_date (DATE) <br>
+total_cost (DECIMAL) <br>
+created_at (TIMESTAMP) <br>
+updated_at (TIMESTAMP) <br>
 
 
 #### Part 4: Controllers
 
-1. Admin Controllers:
-CarController (Admin/CarController.php)
-RentalController (Admin/RentalController.php)
-CustomerController (Admin/CustomerController.php)
+1. Admin Controllers: <br>
+CarController (Admin/CarController.php) <br>
+RentalController (Admin/RentalController.php) <br>
+CustomerController (Admin/CustomerController.php) <br>
 
-2. Frontend Controllers:
-PageController (Frontend/PageController.php)
-CarController (Frontend/CarController.php)
-RentalController (Frontend/RentalController.php)
-CustomerController (Frontend/CustomerController.php)
+2. Frontend Controllers: <br>
+PageController (Frontend/PageController.php) <br>
+CarController (Frontend/CarController.php) <br>
+RentalController (Frontend/RentalController.php) <br>
+CustomerController (Frontend/CustomerController.php) <br>
 
 
 #### Part 4: Models
 
-1. User (User.php):
-isAdmin(): A method to check if the user is an admin.
-isCustomer(): A method to check if the user is a customer.
-rentals(): Defines a hasMany relationship with the Rental model, indicating that a user can have multiple rentals.
+1. User (User.php): <br>
+isAdmin(): A method to check if the user is an admin. <br>
+isCustomer(): A method to check if the user is a customer. <br>
+rentals(): Defines a hasMany relationship with the Rental model, indicating that a user can have multiple rentals. <br>
 
-2. Car (Car.php):
+2. Car (Car.php): <br>
 rentals(): Defines a hasMany relationship with the Rental model, indicating that a car can have multiple rentals.
 
-3. Rental (Rental.php):
+3. Rental (Rental.php): <br>
 car(): Defines a belongsTo relationship with the Car model, indicating that a rental is associated with one car.
 user(): Defines a belongsTo relationship with the User model, indicating that a rental is associated with one user.
 
