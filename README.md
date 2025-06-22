@@ -1,4 +1,5 @@
 # Car-Rental-App
+
 This is a Car Rental Web Application using Laravel-12 and Inertia Vue-3. This Web Application allows users to browse available cars, select a car, and book it for a specified rental period. The system ensures that cars are available for the chosen dates before confirming the booking. It includes role-based access control, where administrators can manage cars and rentals, while customers can view their bookings, rental history, cancel bookings if needed, and update profile information.
 --------------------------------------------------------------------------------------------------------
  
