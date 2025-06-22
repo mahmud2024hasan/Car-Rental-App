@@ -93,7 +93,7 @@ RentalController (Frontend/RentalController.php) <br>
 CustomerController (Frontend/CustomerController.php) <br>
 
 
-#### Part 4: Models
+#### Part 5: Models
 
 1. User (User.php): <br>
 isAdmin(): A method to check if the user is an admin. <br>
