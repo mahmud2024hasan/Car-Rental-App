@@ -234,7 +234,7 @@ class CustomerController extends Controller
     public function updateImage(Request $request)
     {
         $request->validate([
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         /** @var \App\Models\User $user */
@@ -242,8 +242,10 @@ class CustomerController extends Controller
 
         if ($request->hasFile('image')) {
             // Delete old image if exists
-            if ($user->image && Storage::disk('public')->exists($user->image)) {
-                Storage::disk('public')->delete($user->image);
+            $oldImage = $user->customerProfile?->image;
+
+            if ($oldImage && Storage::disk('public')->exists($oldImage)) {
+                Storage::disk('public')->delete($oldImage);
             }
 
             // Upload new profile image
